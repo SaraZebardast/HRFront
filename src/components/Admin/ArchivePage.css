@@ -1,0 +1,114 @@
+/* ArchiveStyles.css */
+.archive-page {
+    min-height: 100vh;
+    background-color: #f5f5dc; /* Beige background */
+    font-family: 'Arial', sans-serif;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.archive-container {
+    background-color: #fffaf0; /* Off-white container */
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #ffefd5; /* Light yellow */
+    color: #8b4513; /* Dark brown text */
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    background-color: #ffe4b5; /* Slightly darker yellow on hover */
+    transform: translateY(-2px);
+}
+
+.archive-title {
+    font-size: 2.5rem;
+    color: #8b4513; /* Dark brown text */
+    margin: 2rem 0 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.archive-table-container {
+    overflow-x: auto;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.archive-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #fff; /* White table background */
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.archive-table th,
+.archive-table td {
+    padding: 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid #deb887; /* Light brown border */
+}
+
+.archive-table th {
+    background-color: #f0e68c; /* Light yellow header */
+    color: #8b4513; /* Dark brown text */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+}
+
+.archive-table tr:nth-child(even) {
+    background-color: #fff8dc; /* Light yellow alternating rows */
+}
+
+.archive-table tr:hover {
+    background-color: #fffacd; /* Lighter yellow on hover */
+}
+
+.archive-table td {
+    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .archive-page {
+        padding: 1rem;
+    }
+
+    .archive-container {
+        padding: 1rem;
+    }
+
+    .archive-title {
+        font-size: 2rem;
+        margin: 1.5rem 0 2rem;
+    }
+
+    .archive-table th,
+    .archive-table td {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}
