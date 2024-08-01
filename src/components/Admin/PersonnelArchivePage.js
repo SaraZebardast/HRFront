@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axiosInstance from '../../api';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import './ArchivePage.css';
@@ -11,7 +11,7 @@ const PersonnelArchivePage = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/archive/personnel');
+                const response = await axiosInstance.get('http://localhost:8080/api/archive/personnel');
                 setArchiveData(response.data);
             } catch (error) {
                 console.error('Error fetching personnel archive data:', error);

@@ -7,7 +7,6 @@ const instance = axios.create({
 // Add a request interceptor
 instance.interceptors.request.use(
     (config) => {
-        // You can use either the 'user' or 'sara' credentials here
         const username = 'sara'; // or 'user'
         const password = 'sara'; // or 'password'
 

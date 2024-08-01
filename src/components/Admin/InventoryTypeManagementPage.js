@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axiosInstance from '../../api';
 
 const InventoryTypesManager = () => {
     const [inventoryTypes, setInventoryTypes] = useState([]);
@@ -13,7 +13,7 @@ const InventoryTypesManager = () => {
 
     const fetchInventoryTypes = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/inventory-types');
+            const response = await axiosInstance.get('http://localhost:8080/api/inventory-types');
             setInventoryTypes(response.data);
         } catch (error) {
             console.error('Error fetching inventory types:', error);
@@ -34,7 +34,7 @@ const InventoryTypesManager = () => {
 
     const handleDeleteType = async (id) => {
         try {
-            await axios.delete(`http://localhost:8080/api/inventory-types/${id}`);
+            await axiosInstance.delete(`http://localhost:8080/api/inventory-types/${id}`);
             fetchInventoryTypes();
         } catch (error) {
             console.error('Error deleting inventory type:', error);
@@ -46,9 +46,9 @@ const InventoryTypesManager = () => {
         e.preventDefault();
         try {
             if (selectedType) {
-                await axios.put(`http://localhost:8080/api/inventory-types/${selectedType.id}`, formData);
+                await axiosInstance.put(`http://localhost:8080/api/inventory-types/${selectedType.id}`, formData);
             } else {
-                await axios.post('http://localhost:8080/api/inventory-types', formData);
+                await axiosInstance.post('http://localhost:8080/api/inventory-types', formData);
             }
             setIsModalOpen(false);
             fetchInventoryTypes();
