@@ -47,4 +47,5 @@ const ManagementDashboard = ({ logout }) => {
     );
 };
 
+
 export default ManagementDashboard;
